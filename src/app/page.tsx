@@ -35,6 +35,7 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import PartnerModal from "./components/PartnerModal";
 import { ShineBorder } from "./components/ShineBorder";
 import SubmitModal from "./components/SubmitModal";
 
@@ -1483,6 +1484,36 @@ function CTASection({ onOpenSubmit }: { onOpenSubmit: () => void }) {
   );
 }
 
+function Sponsors({ onOpenPartner }: { onOpenPartner: () => void }) {
+  return (
+    <section className="border-t border-[color:var(--border)]">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-8 py-14 sm:py-20 flex flex-col items-center text-center">
+        <div className="text-[11px] font-[family-name:var(--font-instrument-sans)] uppercase tracking-[0.22em] text-[color:var(--text-muted)] mb-6">
+          Proudly sponsored by
+        </div>
+        <a
+          href="https://rhemabible.co"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-block opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-200"
+        >
+          <Image src="/rhema-logo.png" alt="Rhema" width={180} height={59} />
+        </a>
+        <p className="mt-6 max-w-md text-[color:var(--text-secondary)] text-[15px] leading-relaxed">
+          BibleBench is an initiative of Rhema, a platform for serious Bible study across traditions.
+        </p>
+        <button
+          onClick={onOpenPartner}
+          className="group mt-8 inline-flex items-center gap-2 h-11 px-6 rounded-full border border-[color:var(--border)] text-[color:var(--text-primary)] font-[family-name:var(--font-instrument-sans)] hover:border-white transition-colors"
+        >
+          Become an official partner
+          <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+        </button>
+      </div>
+    </section>
+  );
+}
+
 function Footer({ onOpenSubmit }: { onOpenSubmit: () => void }) {
   return (
     <footer>
@@ -1517,6 +1548,7 @@ const jsonLd = {
 
 export default function Home() {
   const [submitOpen, setSubmitOpen] = useState(false);
+  const [partnerOpen, setPartnerOpen] = useState(false);
   return (
     <div className="flex-1 w-full">
       <script
@@ -1534,8 +1566,10 @@ export default function Home() {
         <TierExamples />
         <CTASection onOpenSubmit={() => setSubmitOpen(true)} />
       </main>
+      <Sponsors onOpenPartner={() => setPartnerOpen(true)} />
       <Footer onOpenSubmit={() => setSubmitOpen(true)} />
       <SubmitModal open={submitOpen} onClose={() => setSubmitOpen(false)} />
+      <PartnerModal open={partnerOpen} onClose={() => setPartnerOpen(false)} />
     </div>
   );
 }
