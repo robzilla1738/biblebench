@@ -130,8 +130,17 @@ export default function SubmitModal({ open, onClose }: { open: boolean; onClose:
     setStep((s) => Math.max(s - 1, 1));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setDirection(1);
+    try {
+      await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+    } catch (e) {
+      console.error("Submit failed:", e);
+    }
     setSubmitted(true);
   };
 

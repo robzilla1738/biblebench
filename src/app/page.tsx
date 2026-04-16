@@ -1390,11 +1390,20 @@ function CTASection({ onOpenSubmit }: { onOpenSubmit: () => void }) {
   const [email, setEmail] = useState("");
   const [state, setState] = useState<"idle" | "loading" | "done">("idle");
   const prefersReducedMotion = useReducedMotion();
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     setState("loading");
-    setTimeout(() => setState("done"), 700);
+    try {
+      await fetch("/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+    } catch (e) {
+      console.error("Signup failed:", e);
+    }
+    setState("done");
   };
   return (
     <section className="relative py-14 sm:py-20 md:py-28">
