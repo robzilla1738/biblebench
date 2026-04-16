@@ -247,7 +247,23 @@ export default function SubmitModal({ open, onClose }: { open: boolean; onClose:
                 })}
               </div>
 
-              <div className="hidden sm:block mt-auto">
+              <div className="hidden sm:block mt-auto space-y-5">
+                <a
+                  href="/guide"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group block rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4 hover:border-white transition-colors"
+                >
+                  <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[color:var(--text-secondary)] group-hover:text-white transition-colors">
+                    <FileText size={12} /> Guide
+                  </div>
+                  <div className="mt-2 text-[13px] leading-snug text-[color:var(--text-primary)] font-[family-name:var(--font-instrument-sans)]">
+                    What makes an ideal question
+                  </div>
+                  <div className="mt-1 text-[11px] text-[color:var(--text-muted)]">
+                    Read before submitting →
+                  </div>
+                </a>
                 <button
                   onClick={handleClose}
                   className="inline-flex items-center gap-2 text-sm text-[color:var(--text-secondary)] hover:text-white transition-colors"
@@ -327,6 +343,19 @@ export default function SubmitModal({ open, onClose }: { open: boolean; onClose:
                           animate="visible"
                           className="space-y-7"
                         >
+                          <motion.div variants={itemVariants} className="sm:hidden">
+                            <a
+                              href="/guide"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-2 text-[13px] text-[color:var(--text-primary)] hover:text-white transition-colors"
+                            >
+                              <FileText size={14} />
+                              Read the guide: What makes an ideal question
+                              <ArrowRight size={14} className="opacity-70" />
+                            </a>
+                          </motion.div>
+
                           <motion.div variants={itemVariants}>
                             <label className="block font-[family-name:var(--font-instrument-sans)] text-white mb-3 text-[15px]">
                               Your question

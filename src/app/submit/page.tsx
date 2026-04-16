@@ -194,6 +194,14 @@ export default function SubmitPage() {
                 We are building a corpus of rigorous, textually grounded questions. If your
                 question fits the rubric, it belongs here — regardless of your title.
               </p>
+              <Link
+                href="/guide"
+                className="mt-5 inline-flex items-center gap-2 text-[13px] font-[family-name:var(--font-instrument-sans)] text-[color:var(--text-primary)] hover:text-[color:var(--accent)] transition-colors"
+              >
+                <FileText size={14} />
+                Read the guide: What makes an ideal question
+                <ArrowRight size={14} className="opacity-70" />
+              </Link>
             </div>
           </motion.div>
 

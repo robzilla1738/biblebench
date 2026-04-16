@@ -966,10 +966,10 @@ function Submit({ onOpenSubmit }: { onOpenSubmit: () => void }) {
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
               </button>
               <a
-                href="#criteria"
+                href="/guide"
                 className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-[color:var(--border)] text-[color:var(--text-primary)] hover:border-[color:var(--accent)] transition-colors"
               >
-                Read the question spec
+                <FileText size={16} /> Read the guide
               </a>
             </div>
             </div>
@@ -1212,6 +1212,28 @@ function FAQ() {
       eyebrow="Questions"
       title="What contributors usually want to know."
     >
+      <a
+        href="/guide"
+        className="mb-6 md:mb-8 group flex items-center justify-between gap-4 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-4 md:px-6 md:py-5 hover:border-[color:var(--accent)] transition-colors"
+      >
+        <div className="flex items-center gap-3 min-w-0">
+          <span className="inline-flex items-center justify-center size-9 rounded-lg border border-[color:var(--border)] text-[color:var(--text-primary)] group-hover:border-[color:var(--accent)] group-hover:text-[color:var(--accent)] transition-colors">
+            <FileText size={16} />
+          </span>
+          <div className="min-w-0">
+            <div className="font-[family-name:var(--font-instrument-sans)] text-[color:var(--text-primary)] text-[15px] md:text-base truncate">
+              Guide: What makes an ideal question
+            </div>
+            <div className="text-[13px] text-[color:var(--text-secondary)] truncate">
+              Read this before submitting — principles, structure, common pitfalls.
+            </div>
+          </div>
+        </div>
+        <ArrowRight
+          size={16}
+          className="shrink-0 text-[color:var(--text-secondary)] group-hover:text-[color:var(--accent)] group-hover:translate-x-0.5 transition-all"
+        />
+      </a>
       <div ref={ref} className="grid gap-4 md:gap-5">
         {FAQS.map((item, i) => {
           const isOpen = openIndex === i;
