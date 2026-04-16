@@ -19,12 +19,12 @@ const poppins = Poppins({
   weight: ["500", "600", "700"],
   subsets: ["latin"],
 });
-const BASE_URL = "https://biblebenchmark.com";
+const BASE_URL = "https://biblebench.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "BibleBench | A benchmark for biblical literacy, built by the church",
+    default: "BibleBench | A benchmark for biblical literacy, built by The Church",
     template: "%s | BibleBench",
   },
   description:
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: BASE_URL,
     siteName: "BibleBench",
-    title: "BibleBench | A benchmark for biblical literacy, built by the church",
+    title: "BibleBench | A benchmark for biblical literacy, built by The Church",
     description:
       "An AI benchmark scored by people, not just machines. Open to professors, pastors, scholars, and any Christian with a question worth asking.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "BibleBench -- An AI benchmark scored by people, not just machines" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BibleBench | A benchmark for biblical literacy, built by the church",
+    title: "BibleBench | A benchmark for biblical literacy, built by The Church",
     description:
       "An AI benchmark scored by people, not just machines. Open to professors, pastors, scholars, and any Christian with a question worth asking.",
     images: [{ url: "/og.png", alt: "BibleBench" }],
