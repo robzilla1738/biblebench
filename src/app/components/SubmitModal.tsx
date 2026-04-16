@@ -484,11 +484,11 @@ export default function SubmitModal({ open, onClose }: { open: boolean; onClose:
                         className="min-h-[520px]"
                       >
                         <div className="space-y-6">
-                          <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--background)] p-6 sm:p-7">
+                          <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--background)] p-6 sm:p-7 overflow-hidden">
                             <h3 className="font-[family-name:var(--font-instrument-sans)] text-white text-lg mb-6">
                               Review your submission
                             </h3>
-                            <div className="space-y-5">
+                            <div className="space-y-5 break-all">
                               <div>
                                 <div className="text-[11px] uppercase tracking-[0.18em] text-[color:var(--text-muted)] mb-1.5">
                                   Question
